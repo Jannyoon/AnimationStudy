@@ -1,0 +1,40 @@
+@keyframes lotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.square {
+  width : 100px;
+  height : 100px;
+  background-color: blue;
+  animation-name: lotate;
+  animation-duration: 3s;
+  animation-iteration-count: 5;
+}
+
+.testText {
+  font-size: 40px;
+  width:fit-content;
+  padding : 2px;
+  background-color: yellow;
+}
+
+.testText:after {
+  display: block;
+  content: '';
+  border-bottom: 2px solid black;  
+  transform : scaleX(0);
+  transform-origin: 0% 50%;
+  transition: transform 200ms ease-in-out;
+}
+
+.testText:hover:after{
+  transform: scaleX(1);
+}
