@@ -52,14 +52,15 @@ class Circle {
      
     }
     else {
-      if (this.radius>this.minRadius) this.radius-=1;
+      if (this.radius>this.minRadius) this.radius-=0.4;
     }
   }
 }
 
 
+//객체 생성
 function init(){
-  for (let i=0; i<300; i++){
+  for (let i=0; i<800; i++){
     let radius = getRandom(10,30);
     let x = Math.random()*(innerWidth-2*radius) + radius;
     let y = Math.random()*(innerHeight-2*radius) + radius;
@@ -67,11 +68,9 @@ function init(){
     let dy = (Math.random()-0.5);
     circleArray.push(new Circle(x, y, dx, dy, radius));
   }
-
 }
 
 init();
-
 
 
 window.addEventListener('mousemove',(e)=>{
