@@ -104,11 +104,11 @@ class Ball {
   }
   update(){
     if (this.time <= this.ttl){
-      let progress = 1-(this.ttl - this.time)/ this.ttl;
+      let progress = this.time / this.ttl;
       this.size = this.start.size*(1-easeOutQuart(progress));
      
-      this.x = this.x + (this.end.x-this.x)*0.1;
-      this.y = this.y + (this.end.y-this.y)*0.1;
+      this.x = this.x + (this.end.x-this.x)*0.3;
+      this.y = this.y + (this.end.y-this.y)*0.3;
     }
     this.time++;
   }
