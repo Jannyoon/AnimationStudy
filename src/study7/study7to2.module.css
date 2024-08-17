@@ -1,0 +1,102 @@
+body {
+  margin : 0;
+  width : 100vw;
+  height : 100vh;
+  display: flex;
+  justify-content: center;
+  align-items : center;
+  background-color: steelblue;
+  perspective: 2000px;
+  transform-style: preserve-3d;
+  perspective-origin: 50% 25%;
+  
+}
+
+.banner {
+  position : relative;
+  width : 30vh;
+  height : 70vw;
+  transform-style: preserve-3d;
+  transform: rotateZ(-90deg) rotateX(-20deg);
+}
+
+.slider {
+  position : absolute;
+  top:0;
+  left:0;
+  width : 100%;
+  height : 100%;
+  transform-style: preserve-3d;
+  animation-play-state: running;
+  animation: animate 80s linear infinite; 
+}
+
+.slider:hover {
+  animation-play-state: paused;
+}
+
+.item {
+  position: absolute;
+  top:0;
+  left:0;
+  width : 100%;
+  height: 100%;
+  border : 2px solid black;
+  background: linear-gradient(0deg, #f1f1f1, #bbb, #f1f1f1);
+  border-radius: 20px;
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+  writing-mode: vertical-rl;
+}
+
+.item:hover {
+  border-color : tomato;
+  transform: translate(30px, 30px)
+}
+
+.item:nth-child(1){
+  transform: rotateX(0deg);
+}
+
+.item:nth-child(2){
+  transform: rotateX(-20deg);
+}
+
+.item:nth-child(3){
+  transform: rotateX(-40deg);
+}
+
+.item:nth-child(4){
+  transform: rotateX(-60deg);
+}
+
+.item:nth-child(5){
+  transform: rotateX(-80deg);
+}
+
+.item:nth-child(6){
+  transform: rotateX(-100deg);
+}
+
+.item:nth-child(7){
+  transform: rotateX(-120deg);
+}
+
+.item:nth-child(8){
+  transform: rotateX(-140deg);
+}
+
+.item:nth-child(9){
+  transform: rotateX(-160deg);
+}
+
+
+@keyframes animate {
+  0% {
+    transform: rotateX(0);
+  }
+  100% {
+    transform: rotateX(360deg);
+  } 
+}
+
